@@ -5,7 +5,11 @@ import SpoofyShow from "../SpoofyShow";
 
 
 const SpoofyList = (props) => {
+<<<<<<< HEAD:spoofy/src/components/SpoofyList/SpoofyList.js
   const [spoofy ,setSpoofy] = useState([]);
+=======
+  const [spoofy, setSpoofy] = useState([]);
+>>>>>>> 365e7aa1f0c637ab79ee655d30e09ad6ad479630:spoofy/src/components/spoofyList/spoofyList.js
 
   useEffect(() => {
     // Need to wrap this in an async function to use await inside:
