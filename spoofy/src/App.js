@@ -1,4 +1,5 @@
 import React from 'react';
+import CORS from 'cors';
 import logo from './logo.svg';
 import './App.css';
 
