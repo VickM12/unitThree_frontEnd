@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-import spoofyShow from "../spoofyShow/spoofyShow";
+import SpoofyShow from "../SpoofyShow/SpoofyShow";
 
 
 const SpoofyList = (props) => {
