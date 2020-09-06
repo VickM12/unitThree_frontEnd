@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-import SpoofyShow from "../SpoofyShow/SpoofyShow";
+import SpoofyShow from "../SpoofyShow";
 
 
 const SpoofyList = (props) => {
-  const [spoofy setSpoofy] = useState([]);
+  const [spoofy ,setSpoofy] = useState([]);
 
   useEffect(() => {
     // Need to wrap this in an async function to use await inside:
     async function fetchData() {
-      const response = await axios.get("");
+      const response = await axios.get("http://localhost:3001/api/spoofy");
       setSpoofy(response.data);
     }
     fetchData();

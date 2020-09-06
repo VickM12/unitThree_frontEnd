@@ -108,7 +108,7 @@ const App = () => {
           <Route
             path="/"
             render={() => {
-              return <DogList isLoggedIn={isLoggedIn} />;
+              return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
         </Switch>
