@@ -1,27 +1,107 @@
-import React from 'react';
-import CORS from 'cors';
-import logo from './logo.svg';
+import React , {Component}from 'react';
+// import CORS from 'cors';
+import {Route, Switch} from 'react-router-dom'
+// import axios from 'axios'
+
+import NavBar from '../NavBar/NavBar'
+import SpoofyList from '../spoofyList/spoofyList'
+import SignUpForm from '../signUpForm/signUpForm'
+import LogInForm from "../LoginForm/LoginForm";
+import LogOut from "../LogOut/LogOut";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      email: "",
+      password: "",
+      isLoggedIn: false,
+    };
+
+    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+  }
+
+  componentDidMount() {
+    if (localStorage.token) {
+      this.setState({
+        isLoggedIn: true,
+      });
+    } else {
+      this.setState({
+        isLoggedIn: false,
+      });
+    }
+  }
+
+  handleLogOut() {}
+
+  handleInput(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  handleSignUp(e) {}
+
+  handleLogIn(e) {}
+
+  render() {
+    return (
+      <div>
+        <NavBar isLoggedIn={this.state.isLoggedIn} />
+        <div className="body">
+          <Switch>
+            <Route
+              path="/signup"
+              render={(props) => {
+                return (
+                  <SignUpForm
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleSignUp={this.handleSignUp}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/logout"
+              render={(props) => {
+                return (
+                  <LogOut
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleLogOut={this.handleLogOut}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/login"
+              render={(props) => {
+                return (
+                  <LogInForm
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleLogIn={this.handleLogIn}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/"
+              render={() => {
+                return <SpoofyList isLoggedIn={this.state.isLoggedIn} />;
+              }}
+            />
+          </Switch>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
