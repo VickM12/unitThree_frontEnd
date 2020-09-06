@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.css";
 
 function NavBar(props) {
+
   let navBarItems = [
     <li key={1}>
       <a href="/">Music</a>
@@ -27,12 +28,12 @@ function NavBar(props) {
   }
 
   return (
-    <>
-      <h1></h1>
+    <div>
+      <h1>Spoofy</h1>
       <nav>
          <ul>{navBarItems}</ul>
       </nav>
-    </>
+    </div>
   );
 }
 

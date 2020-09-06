@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
+// import { SpotifyApiContext } from 'react-spotify-api';
+
 
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
-import LogInForm from "./components/LogInForm/LogInForm";
+import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
 
@@ -72,7 +74,7 @@ const App = () => {
     <div>
       <NavBar isLoggedIn={isLoggedIn} />
       <div className="body">
-        <Switch>
+        <Router>
           <Route
             path="/signup"
             render={(props) => {
@@ -111,7 +113,7 @@ const App = () => {
               return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
-        </Switch>
+        </Router>
       </div>
     </div>
   );
