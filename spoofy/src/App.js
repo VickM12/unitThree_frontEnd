@@ -8,7 +8,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
-// import MusicInfo from './MusicInfo';
+import MusicInfo from "./components/MusicInfo/MusicInfo";
 
 function App(props) {
 
