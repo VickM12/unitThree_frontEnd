@@ -44,7 +44,13 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.1.0",
     "react-app-rewire-alias": "^0.1.6",
     "react-app-rewired": "^2.1.6"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

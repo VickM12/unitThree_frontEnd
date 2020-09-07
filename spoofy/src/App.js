@@ -8,7 +8,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
-import MusicInfo from "./components/MusicInfo/MusicInfo";
+import MusicInfo from "./components/MusicInfo/MusicInfo"
 
 function App(props) {
 
@@ -21,7 +21,10 @@ function App(props) {
     searchURL: ''
   })
 
-const App = () => {
+const App = ({loaded}) => {
+  if(!loaded){
+    return null;
+  }
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -32,10 +35,12 @@ const App = () => {
 
   useEffect(() => {
     if (localStorage.token) {
+
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
+
   }, [isLoggedIn]);
 
   //API QUERY START
