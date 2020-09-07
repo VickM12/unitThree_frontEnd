@@ -1,4 +1,4 @@
-import React , {Component}from 'react';
+import React , {Component} from 'react';
 // import CORS from 'cors';
 import {Route, Switch} from 'react-router-dom'
 // import axios from 'axios'
@@ -6,8 +6,8 @@ import {Route, Switch} from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import SpoofyList from '../spoofyList/spoofyList'
 import SignUpForm from '../signUpForm/signUpForm'
-import LogInForm from "../LoginForm/LoginForm";
-import LogOut from "../LogOut/LogOut";
+import LogInForm from "../LoginForm/LoginForm"
+import LogOut from "../LogOut/LogOut"
 import './App.css';
 
 class App extends Component {
