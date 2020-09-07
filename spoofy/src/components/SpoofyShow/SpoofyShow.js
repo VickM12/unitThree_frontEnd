@@ -1,5 +1,5 @@
 import React from "react";
-import "./spoofyShow.css";
+import "./SpoofyShow.css";
 
 function SpoofyShow(props) {
   const { title, imageUrl, genre, time, } = props.spoofy;

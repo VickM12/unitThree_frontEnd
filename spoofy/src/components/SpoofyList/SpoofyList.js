@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-import spoofyShow from "../spoofyShow/spoofyShow";
+import spoofyShow from "../SpoofyShow/SpoofyShow";
 
 
 const SpoofyList = (props) => {
-  const [spoofy setSpoofy] = useState([]);
+  const [spoofy, setSpoofy] = useState([]);
 
   useEffect(() => {
     // Need to wrap this in an async function to use await inside:
