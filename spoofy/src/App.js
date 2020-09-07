@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
+
 // import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
@@ -28,7 +29,7 @@ function App(props) {
           console.log(query.name)
           const response = await axios.get(query.name)
           setAllMusic({ ...allMusic, ...response.data });
-          
+
 
 					updateQuery({ ...query, name: '', searchURL: '' });
 				} catch (error) {
