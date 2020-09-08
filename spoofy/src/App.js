@@ -17,7 +17,7 @@ const App = () => {
     isLoggedIn: false,
   });
   
-function App (props) {
+
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
@@ -176,6 +176,6 @@ function App (props) {
     </div>
   );
 };
-};
+
 
 export default App;
