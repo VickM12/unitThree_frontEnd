@@ -7,7 +7,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
-import MusicInfo from './MusicInfo';
+import MusicInfo from './components/MusicInfo/MusicInfo';
 
 const App = () => {
   const [state, setState] = useState({
@@ -18,6 +18,7 @@ const App = () => {
   
 function App (props) {
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
 
   const [query, updateQuery] = useState({
@@ -28,7 +29,6 @@ function App (props) {
   })
 
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -176,4 +176,5 @@ function App (props) {
   );
 };
 };
+
 export default App;
