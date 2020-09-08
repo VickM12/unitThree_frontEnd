@@ -149,8 +149,8 @@ const App = () => {
           />
           <Route
             path="/"
-            render={() => {
-              return <SpoofyList isLoggedIn={isLoggedIn} />;
+            render={() => { '/users'
+            //   return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
         </Router>
