@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { SpotifyApiContext } from 'react-spotify-api';
+import token from 'useApiRequest'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SpotifyApiContext.Provider /*value={token}*/>
+    <SpotifyApiContext.Provider value={token}>
     <App />
     </SpotifyApiContext.Provider>
   </React.StrictMode>,

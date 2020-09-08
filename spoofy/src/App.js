@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-// import { SpotifyApiContext } from 'react-spotify-api';
-
-
+import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
+import MusicInfo from './components/MusicInfo/MusicInfo';
 
+// function App(props) {
 const App = () => {
   const [state, setState] = useState({
     email: "",
@@ -19,6 +19,16 @@ const App = () => {
   });
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [allMusic, setAllMusic] = useState({})
+
+  const [query, updateQuery] = useState({
+    baseURL: 'https://api.deezer.com/artist/',
+    name: '',
+    id: '',
+    searchURL: ''
+  })
+
+
 
   useEffect(() => {
     if (localStorage.token) {
@@ -27,6 +37,37 @@ const App = () => {
       setIsLoggedIn(false);
     }
   }, [isLoggedIn]);
+
+  //API QUERY START
+  useEffect(() => {
+		query.name.length > 0 &&
+			(async () => {
+				try {
+          console.log(query.name)
+          const response = await axios.get(query.searchURL)
+          setAllMusic({ ...allMusic, ...response.data });
+          
+
+					updateQuery({ ...query, searchURL: '', name: '' });
+				} catch (error) {
+					console.error(error);
+				}
+			})();
+  }, [allMusic, query]);
+
+  const handleSubmit = event => {
+		event.preventDefault();
+		updateQuery({
+			...query,
+			searchURL: `${query.baseURL}${query.name}`
+		});
+	};
+
+	const handleChange = event => {
+		/*handles the query*/
+		updateQuery({ ...query, ...{ [event.target.id]: event.target.value } });
+  };
+  //API QUERY END
 
   const handleLogOut = () => {
     setState({
@@ -114,7 +155,23 @@ const App = () => {
             }}
           />
         </Router>
+        <div className="Page-wrapper">
+			<h2>Spoofy App</h2>
+			<form onSubmit={handleSubmit}>
+				<label htmlFor="name">
+					<input
+						id="name"
+						type="text"
+						value={query.name}
+						onChange={handleChange}
+					/>
+				</label>
+				<input type="submit" value="Search For Movie" />
+			</form>
+			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
+		</div>
       </div>
+      
     </div>
   );
 };
