@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-// import { SpotifyApiContext } from 'react-spotify-api';
+import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
-import MusicInfo from './MusicInfo';
+import MusicInfo from './components/MusicInfo/MusicInfo';
 
-function App(props) {
+// function App(props) {
+const App = () => {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    isLoggedIn: false,
+  });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
 
   const [query, updateQuery] = useState({
@@ -21,14 +28,7 @@ function App(props) {
     searchURL: ''
   })
 
-const App = () => {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    isLoggedIn: false,
-  });
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -175,5 +175,5 @@ const App = () => {
     </div>
   );
 };
-};
+
 export default App;
