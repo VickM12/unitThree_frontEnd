@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-// import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
+<<<<<<< HEAD
 import MusicInfo from "./components/MusicInfo/MusicInfo"
+=======
+import MusicInfo from './components/MusicInfo/MusicInfo';
+>>>>>>> 7c230101c271ea589085088872fb01f364cfd4a2
 
-function App(props) {
+// function App(props) {
+const App = () => {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    isLoggedIn: false,
+  });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
 
   const [query, updateQuery] = useState({
@@ -21,6 +31,7 @@ function App(props) {
     searchURL: ''
   })
 
+<<<<<<< HEAD
 const App = ({loaded}) => {
   if(!loaded){
     return null;
@@ -30,8 +41,9 @@ const App = ({loaded}) => {
     password: "",
     isLoggedIn: false,
   });
+=======
+>>>>>>> 7c230101c271ea589085088872fb01f364cfd4a2
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -49,7 +61,7 @@ const App = ({loaded}) => {
 			(async () => {
 				try {
           console.log(query.name)
-          const response = await axios.get(query.searchURL)
+          const response = await axios.get('http://localhost:8000/music/', query.searchURL )
           setAllMusic({ ...allMusic, ...response.data });
 
 
@@ -111,6 +123,7 @@ const App = ({loaded}) => {
       });
       localStorage.token = response.data.token;
       setIsLoggedIn(true);
+     
     } catch (error) {
       console.log(error);
     }
@@ -122,7 +135,7 @@ const App = ({loaded}) => {
       <div className="body">
         <Router>
           <Route
-            path="/users/signup"
+            path="/signup"
             render={(props) => {
               return (
                 <SignUpForm
@@ -155,11 +168,14 @@ const App = ({loaded}) => {
           />
           <Route
             path="/"
-            render={() => {
-              return <SpoofyList isLoggedIn={isLoggedIn} />;
+            render={() => { '/users'
+            //   return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
-        </Router>
+        <Route
+        path='/music'
+        render={(props) =>{
+          return (
         <div className="Page-wrapper">
 			<h2>Spoofy App</h2>
 			<form onSubmit={handleSubmit}>
@@ -171,14 +187,18 @@ const App = ({loaded}) => {
 						onChange={handleChange}
 					/>
 				</label>
-				<input type="submit" value="Search For Movie" />
+				<input type="submit" value="Search For Artist" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
+          )}
+        }
+        />
+    </Router>
       </div>
 
     </div>
   );
 };
-};
+
 export default App;
