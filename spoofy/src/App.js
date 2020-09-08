@@ -44,7 +44,7 @@ const App = () => {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/users/signup", {
+      const response = await axios.post("http://localhost:8000/users/signup", {
         email: state.email,
         password: state.password,
       });
@@ -59,7 +59,7 @@ const App = () => {
   const handleLogIn = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/users/login", {
+      const response = await axios.post("http://localhost:8000/users/login", {
         email: state.email,
         password: state.password,
       });
@@ -76,7 +76,7 @@ const App = () => {
       <div className="body">
         <Router>
           <Route
-            path="/signup"
+            path="/users/signup"
             render={(props) => {
               return (
                 <SignUpForm
@@ -96,7 +96,7 @@ const App = () => {
             }}
           />
           <Route
-            path="/login"
+            path="/users/login"
             render={(props) => {
               return (
                 <LogInForm
