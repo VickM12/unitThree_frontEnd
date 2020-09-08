@@ -105,6 +105,7 @@ const App = () => {
       });
       localStorage.token = response.data.token;
       setIsLoggedIn(true);
+     
     } catch (error) {
       console.log(error);
     }
@@ -116,7 +117,7 @@ const App = () => {
       <div className="body">
         <Router>
           <Route
-            path="/users/signup"
+            path="/signup"
             render={(props) => {
               return (
                 <SignUpForm
