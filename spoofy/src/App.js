@@ -165,7 +165,7 @@ const App = () => {
 						onChange={handleChange}
 					/>
 				</label>
-				<input type="submit" value="Search For Movie" />
+				<input type="submit" value="Search For Artist" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
