@@ -47,8 +47,6 @@ const App = () => {
           console.log(query.name)
           const response = await axios.get(query.searchURL)
           setAllMusic({ ...allMusic, ...response.data });
-          
-
 					updateQuery({ ...query, searchURL: '', name: '' });
 				} catch (error) {
 					console.error(error);

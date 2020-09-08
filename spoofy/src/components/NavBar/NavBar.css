@@ -1,3 +1,19 @@
 body{
   background-color: peachpuff;
 }
+.navBarItems {
+  color: white; 
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  margin: 0px; 
+
+}
+.mainHeader {
+  color: darkolivegreen;
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  padding: 30px;
+  margin: -20px; 
+}

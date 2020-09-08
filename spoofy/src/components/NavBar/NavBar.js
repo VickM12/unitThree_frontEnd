@@ -4,34 +4,35 @@ import "./NavBar.css";
 function NavBar(props) {
 
   let navBarItems = [
-    <li key={1}>
+    <h2 key={1}>
       <a href="/">Music</a>
-    </li>,
+    </h2>,
   ];
   if (props.isLoggedIn) {
     navBarItems.push(
-      <li key={2}>
+      <h2 key={2}>
         <a href="/logout">Log Out</a>
-      </li>
+      </h2>
     );
   } else {
     navBarItems.push(
-      <li key={3}>
+      <h2 key={3}>
         <a href="/signup">Sign Up</a>
-      </li>
+      </h2>
     );
     navBarItems.push(
-      <li key={4}>
+      <h2 key={4}>
         <a href="/users/login">Log In</a>
-      </li>
+      </h2>
     );
   }
 
   return (
     <div>
-      <h1>Spoofy</h1>
-      <nav>
-         <ul>{navBarItems}</ul>
+      {/* <img src="https://i.imgur.com/YcAFh05.png" width="100%" height="430px"/> */}
+      <h1 className="mainHeader">Spoofy</h1>
+      <nav className="navBarItems">
+         <h2>{navBarItems}</h2>
       </nav>
     </div>
   );
