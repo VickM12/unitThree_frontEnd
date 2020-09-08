@@ -154,7 +154,10 @@ const App = () => {
             //   return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
-        </Router>
+        <Route
+        path='/music'
+        render={(props) =>{
+          return (
         <div className="Page-wrapper">
 			<h2>Spoofy App</h2>
 			<form onSubmit={handleSubmit}>
@@ -170,6 +173,10 @@ const App = () => {
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
+          )}
+        }
+        />
+    </Router>
       </div>
       
     </div>
