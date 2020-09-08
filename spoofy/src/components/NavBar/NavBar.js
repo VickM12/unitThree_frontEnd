@@ -4,9 +4,9 @@ import "./NavBar.css";
 function NavBar(props) {
 
   let navBarItems = [
-    <h2 key={1}>
-      <a href="/">Music</a>
-    </h2>,
+    <li key={1}>
+      <a href="/music">Music</a>
+    </li>,
   ];
   if (props.isLoggedIn) {
     navBarItems.push(
