@@ -43,7 +43,7 @@ const App = () => {
 			(async () => {
 				try {
           console.log(query.name)
-          const response = await axios.get(query.searchURL)
+          const response = await axios.get('http://localhost:8000/music/', query.searchURL )
           setAllMusic({ ...allMusic, ...response.data });
           
 
