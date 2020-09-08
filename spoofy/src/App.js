@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
@@ -150,8 +149,8 @@ const App = () => {
           />
           <Route
             path="/"
-            render={() => {
-              return <SpoofyList isLoggedIn={isLoggedIn} />;
+            render={() => { '/users'
+            //   return <SpoofyList isLoggedIn={isLoggedIn} />;
             }}
           />
         </Router>
@@ -166,7 +165,7 @@ const App = () => {
 						onChange={handleChange}
 					/>
 				</label>
-				<input type="submit" value="Search For Movie" />
+				<input type="submit" value="Search For Artist" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
