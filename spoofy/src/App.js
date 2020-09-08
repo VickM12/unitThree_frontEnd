@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
-// import { SpotifyApiContext } from 'react-spotify-api';
 import NavBar from "./components/NavBar/NavBar";
 import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
@@ -10,7 +9,14 @@ import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
 import MusicInfo from './MusicInfo';
 
-function App(props) {
+const App = () => {
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+    isLoggedIn: false,
+  });
+  
+function App (props) {
 
   const [allMusic, setAllMusic] = useState({})
 
@@ -21,12 +27,6 @@ function App(props) {
     searchURL: ''
   })
 
-const App = () => {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    isLoggedIn: false,
-  });
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
