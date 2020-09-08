@@ -17,7 +17,7 @@ function NavBar(props) {
   } else {
     navBarItems.push(
       <li key={3}>
-        <a href="/users/signup">Sign Up</a>
+        <a href="/signup">Sign Up</a>
       </li>
     );
     navBarItems.push(
