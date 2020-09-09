@@ -9,6 +9,7 @@ import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
 import MusicInfo from './components/MusicInfo/MusicInfo';
 
+
 // function App(props) {
 const App = () => {
   const [state, setState] = useState({
@@ -16,14 +17,15 @@ const App = () => {
     password: "",
     isLoggedIn: false,
   });
+  
+
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
 
   const [query, updateQuery] = useState({
-    baseURL: 'https://api.deezer.com/artist/',
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=',
     name: '',
-    id: '',
     searchURL: ''
   })
 
@@ -43,11 +45,17 @@ const App = () => {
 			(async () => {
 				try {
           console.log(query.name)
+<<<<<<< HEAD
           const response = await axios.get('http://localhost:8000/', query.searchURL )
           const data = await response.json()
           setAllMusic({ ...allMusic, ...data });
           updateQuery({ ...query, searchURL: '', name: '' });
 					
+=======
+          const response = await axios.get('http://localhost:8000/music/', query.searchURL )
+          setAllMusic({ ...allMusic, ...response.data });
+					updateQuery({ ...query, searchURL: '', name: '' });
+>>>>>>> 107011f5c86a9388317f5dd6a367cda257d9ee26
 				} catch (error) {
 					console.error(error);
 				}
@@ -169,7 +177,7 @@ const App = () => {
 						onChange={handleChange}
 					/>
 				</label>
-				<input type="submit" value="Search For Artist" />
+        <input type="submit" value="Search For Artist. (Use - for spaces)" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
@@ -182,5 +190,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
