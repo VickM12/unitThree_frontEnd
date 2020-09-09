@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import MusicPlayer from '../MusicPlayer/MusicPlayer'
 export default function MusicInfo(props) {
 	return (
 		<>
@@ -8,6 +8,16 @@ export default function MusicInfo(props) {
 				<img src={props.allMusic.data[0].artist.picture} alt={props.allMusic.data[0].artist.picture} />
 				<h3>Track Title: {props.allMusic.data[0].title_short}</h3>
 			</div>
+			<div>
+				<audio id="audio1">
+				<source src={`${props.allMusic.data[0].artist.preview}`} />
+				</audio>
+<button id="play">Play</button><button id="stop">Stop</button>
+
+</div>
+			{/* <div>
+				<MusicPlayer />
+			</div> */}
 		</>
 	);
 }
