@@ -105,7 +105,7 @@ const App = () => {
       });
       localStorage.token = response.data.token;
       setIsLoggedIn(true);
-     
+
     } catch (error) {
       console.log(error);
     }
@@ -178,7 +178,7 @@ const App = () => {
         />
     </Router>
       </div>
-      
+
     </div>
   );
 };
