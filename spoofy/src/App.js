@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import NavBar from "./components/NavBar/NavBar";
-import SpoofyList from "./components/SpoofyList/SpoofyList";
+// import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
@@ -43,11 +43,11 @@ const App = () => {
 			(async () => {
 				try {
           console.log(query.name)
-          const response = await axios.get('http://localhost:8000/music/', query.searchURL )
-          setAllMusic({ ...allMusic, ...response.data });
-          
-
-					updateQuery({ ...query, searchURL: '', name: '' });
+          const response = await axios.get('http://localhost:8000/', query.searchURL )
+          const data = await response.json()
+          setAllMusic({ ...allMusic, ...data });
+          updateQuery({ ...query, searchURL: '', name: '' });
+					
 				} catch (error) {
 					console.error(error);
 				}
@@ -58,7 +58,7 @@ const App = () => {
 		event.preventDefault();
 		updateQuery({
 			...query,
-			searchURL: `${query.baseURL}${query.name}`
+			searchURL: query.baseURL+ query.name
 		});
 	};
 
@@ -155,7 +155,7 @@ const App = () => {
             }}
           />
         <Route
-        path='/music'
+        path='/'
         render={(props) =>{
           return (
         <div className="Page-wrapper">
