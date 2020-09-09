@@ -45,7 +45,7 @@ const App = () => {
 			(async () => {
 				try {
           console.log(query.name)
-          const response = await axios.get('http://localhost:8000/music/', query.searchURL )
+          const response = await axios.get(query.searchURL)
           setAllMusic({ ...allMusic, ...response.data });
 					updateQuery({ ...query, searchURL: '', name: '' });
 				} catch (error) {
@@ -58,7 +58,7 @@ const App = () => {
 		event.preventDefault();
 		updateQuery({
 			...query,
-			searchURL: `${query.baseURL}${query.name}`
+			searchURL: query.baseURL+ query.name
 		});
 	};
 
@@ -105,7 +105,7 @@ const App = () => {
       });
       localStorage.token = response.data.token;
       setIsLoggedIn(true);
-     
+
     } catch (error) {
       console.log(error);
     }
@@ -155,7 +155,7 @@ const App = () => {
             }}
           />
         <Route
-        path='/music'
+        path='/'
         render={(props) =>{
           return (
         <div className="Page-wrapper">
@@ -178,7 +178,7 @@ const App = () => {
         />
     </Router>
       </div>
-      
+
     </div>
   );
 };
