@@ -1,10 +1,14 @@
 import React from "react";
 import "./NavBar.css";
+//import Breadcrumb from 'react-bootstrap/Breadcrumb'
+
 
 function NavBar(props) {
 
   let navBarItems = [
+
     <li key={1}>
+
       <a href="/music">Music</a>
     </li>,
   ];
@@ -13,7 +17,7 @@ function NavBar(props) {
       <li key={2}>
         <a href="/logout">Log Out</a>
       </li>
-    );
+    )
   } else {
     navBarItems.push(
       <li key={3}>
@@ -34,7 +38,8 @@ function NavBar(props) {
          <ul>{navBarItems}</ul>
       </nav>
     </div>
-  );
+
+);
 }
 
 export default NavBar;

@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import NavBar from "./components/NavBar/NavBar";
-import SpoofyList from "./components/SpoofyList/SpoofyList";
+// import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import "./App.css";
-<<<<<<< HEAD
-import MusicInfo from "./components/MusicInfo/MusicInfo"
-=======
 import MusicInfo from './components/MusicInfo/MusicInfo';
->>>>>>> 7c230101c271ea589085088872fb01f364cfd4a2
+
+
 
 // function App(props) {
 const App = () => {
@@ -31,28 +29,14 @@ const App = () => {
     searchURL: ''
   })
 
-<<<<<<< HEAD
-const App = ({loaded}) => {
-  if(!loaded){
-    return null;
-  }
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-    isLoggedIn: false,
-  });
-=======
->>>>>>> 7c230101c271ea589085088872fb01f364cfd4a2
 
 
   useEffect(() => {
     if (localStorage.token) {
-
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
-
   }, [isLoggedIn]);
 
   //API QUERY START
@@ -123,7 +107,7 @@ const App = ({loaded}) => {
       });
       localStorage.token = response.data.token;
       setIsLoggedIn(true);
-     
+
     } catch (error) {
       console.log(error);
     }
