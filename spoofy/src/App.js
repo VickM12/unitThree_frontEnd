@@ -46,7 +46,8 @@ const App = () => {
 				try {
           console.log(query.name)
           const response = await axios.get('http://localhost:8000/music/', query.searchURL )
-          setAllMusic({ ...allMusic, ...response.data });
+          const data = await response.json()
+          setAllMusic({ ...allMusic, ...data });
 					updateQuery({ ...query, searchURL: '', name: '' });
 				} catch (error) {
 					console.error(error);
