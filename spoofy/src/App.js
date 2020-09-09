@@ -24,7 +24,7 @@ const App = () => {
   const [allMusic, setAllMusic] = useState({})
 
   const [query, updateQuery] = useState({
-    baseURL: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/',
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=',
     name: '',
     searchURL: ''
   })
@@ -169,7 +169,7 @@ const App = () => {
 						onChange={handleChange}
 					/>
 				</label>
-				<input type="submit" value="Search For Artist" />
+        <input type="submit" value="Search For Artist. (Use - for spaces)" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>
