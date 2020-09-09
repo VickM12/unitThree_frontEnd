@@ -17,3 +17,20 @@ body{
   padding: 30px;
   margin: -20px; 
 }
+.music-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-submit {
+  justify-content: center;
+  align-items: center;
+}
+.Page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
