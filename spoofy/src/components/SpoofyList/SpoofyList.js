@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-import spoofyShow from "../SpoofyShow/SpoofyShow";
-
+import SpoofyShow from "../SpoofyShow/SpoofyShow";
 
 const SpoofyList = (props) => {
   const [spoofy, setSpoofy] = useState([]);
@@ -19,7 +18,7 @@ const SpoofyList = (props) => {
   const Spoofy = spoofy.map((spoofy, i) => {
     return (
       <div key={i}>
-        <spoofyShow spoofy={spoofy} isLoggedIn={props.isLoggedIn} />
+        <SpoofyShow spoofy={spoofy} isLoggedIn={props.isLoggedIn} />
       </div>
     );
   });

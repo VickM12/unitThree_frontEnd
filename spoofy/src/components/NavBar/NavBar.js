@@ -5,7 +5,7 @@ function NavBar(props) {
 
   let navBarItems = [
     <li key={1}>
-      <a href="/music">Music</a>
+      <a href="/music">Music Search</a>
     </li>,
   ];
   if (props.isLoggedIn) {

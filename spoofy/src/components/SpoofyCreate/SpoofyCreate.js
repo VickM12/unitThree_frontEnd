@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import axios from 'axios'
 
 
@@ -22,7 +21,7 @@ function SpoofyCreate(props) {
                 username: spoofyState.username,
                 artist: spoofyState.artist,
                 track: spoofyState.track,
-                image: spoofyState.image,
+                image: spoofyState.image
             });
             console.log(response);
         } catch (error) {

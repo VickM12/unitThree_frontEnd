@@ -110,9 +110,6 @@ const App = () => {
     }
   };
 
-
-
-
   return (
     <div>
       <NavBar isLoggedIn={isLoggedIn} />
@@ -184,6 +181,7 @@ const App = () => {
               return (
                  <SpoofyCreate isLoggedIn={isLoggedIn}
                  />
+                 
                 )
               }}
             />
