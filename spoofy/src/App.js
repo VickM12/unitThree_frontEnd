@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 import NavBar from "./components/NavBar/NavBar";
-// import SpoofyList from "./components/SpoofyList/SpoofyList";
+//import SpoofyList from "./components/SpoofyList/SpoofyList";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
+import SpoofyCreate from "./components/SpoofyCreate/SpoofyCreate"
 import "./App.css";
 import MusicInfo from './components/MusicInfo/MusicInfo';
 
@@ -112,6 +113,9 @@ const App = () => {
     }
   };
 
+
+
+
   return (
     <div>
       <NavBar isLoggedIn={isLoggedIn} />
@@ -177,7 +181,17 @@ const App = () => {
           )}
         }
         />
+        <Route
+            path="/spoofycreate"
+            render={(props) => {
+              return (
+                 <SpoofyCreate isLoggedIn={isLoggedIn}
+                 />
+                )
+              }}
+            />
     </Router>
+
       </div>
 
     </div>

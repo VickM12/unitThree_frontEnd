@@ -44,7 +44,7 @@ const LoginForm = () => {
               <p className="font-small grey-text d-flex justify-content-center">
                 Don't have an account?
                 <a
-                  href="#!"
+                  href="/signup"
                   className="dark-grey-text font-weight-bold ml-1"
                 >
                   Sign up
