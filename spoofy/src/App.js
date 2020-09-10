@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState, useEffect } from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
@@ -169,7 +170,7 @@ const App = () => {
 						onChange={handleChange}
 					/>
 				</label>
-        <input type="submit" value="Search For Artist. (Use - for spaces)" />
+        <input class="artist-submit" type="submit" value="Search For Artist. (Use - for spaces)" />
 			</form>
 			{Object.keys(allMusic).length > 0 && <MusicInfo allMusic={allMusic} />}
 		</div>

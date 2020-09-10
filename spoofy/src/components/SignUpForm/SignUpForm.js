@@ -2,7 +2,6 @@ import React from "react";
 
 import "./SignUpForm.css";
 
-
 function SignUpForm(props) {
   return (
     <div>
@@ -18,7 +17,6 @@ function SignUpForm(props) {
           <label htmlFor="password">Password</label>
           <input type="text" name="password" onChange={props.handleInput} />
         </div>
-
         <input value="Submit" type="submit" onClick={props.handleSignUp} />
       </form>
     </div>

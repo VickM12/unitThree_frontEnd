@@ -6,9 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <SpotifyApiContext.Provider value={token}> */}
     <App />
-    
   </React.StrictMode>,
   document.getElementById('root')
 );

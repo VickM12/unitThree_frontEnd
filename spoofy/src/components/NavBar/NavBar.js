@@ -1,41 +1,42 @@
 import React from "react";
 import "./NavBar.css";
 
+
+
 function NavBar(props) {
+return(
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/music">Music</a>
+  <a class="navbar-brand" href="/users/login">Log In</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  let navBarItems = [
-    <li key={1}>
-      <a href="/music">Music</a>
-    </li>,
-  ];
-  if (props.isLoggedIn) {
-    navBarItems.push(
-      <h2 key={2}>
-        <a href="/logout">Log Out</a>
-      </h2>
-    );
-  } else {
-    navBarItems.push(
-      <h2 key={3}>
-        <a href="/signup">Sign Up</a>
-      </h2>
-    );
-    navBarItems.push(
-      <h2 key={4}>
-        <a href="/users/login">Log In</a>
-      </h2>
-    );
-  }
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Log Out <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/music" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/signup">Sign Up</a>
 
-  return (
-    <div>
-      {/* <img src="https://i.imgur.com/YcAFh05.png" width="100%" height="430px"/> */}
-      <h1 className="mainHeader">Spoofy</h1>
-      <nav className="navBarItems">
-         <h2>{navBarItems}</h2>
-      </nav>
-    </div>
-  );
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+)
+
 }
 
 export default NavBar;
