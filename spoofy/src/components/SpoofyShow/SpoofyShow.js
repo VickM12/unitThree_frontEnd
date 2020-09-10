@@ -2,17 +2,17 @@ import React from "react";
 import "./SpoofyShow.css";
 
 function SpoofyShow(props) {
-  const { title, imageUrl, genre, time, } = props.spoofy;
+  const { username, artist, track, image, } = props.spoofy;
   return (
     <div className="spoofy-preview">
-      <img src={imageUrl} alt={title} className="spoofy-image" />
+      <img src={image} alt={artist} className="spoofy-image" />
       <h3>{}</h3>
-      {props.isLoggedIn ? <h4> {title}</h4> : ""}
-      {props.isLoggedIn ? <h4> {imageUrl}</h4> : ""}
-      {props.isLoggedIn ? <h4> {time}</h4> : ""}
-      {props.isLoggedIn ? <h4> {genre}</h4> : ""}
+      {props.isLoggedIn ? <h4> {username} </h4> : ""}
+      {props.isLoggedIn ? <h4> {artist} </h4> : ""}
+      {props.isLoggedIn ? <h4> {track} </h4> : ""}
+      {props.isLoggedIn ? <h4> {image} </h4> : ""}
     </div>
   );
-}
+};
 
 export default SpoofyShow;

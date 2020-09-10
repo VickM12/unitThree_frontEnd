@@ -18,14 +18,21 @@ function NavBar(props) {
         <a href="/logout">Log Out</a>
       </li>
     );
-  } else {
+  }if (props.isLoggedIn) {
     navBarItems.push(
       <li key={3}>
+        <a href="/spoofycreate">Add to Favorites</a>
+      </li>
+    );
+  }
+  else {
+    navBarItems.push(
+      <li key={4}>
         <a href="/signup">Sign Up</a>
       </li>
     );
     navBarItems.push(
-      <li key={4}>
+      <li key={5}>
         <a href="/users/login">Log In</a>
       </li>
     );
@@ -33,7 +40,6 @@ function NavBar(props) {
 
   return (
     <div>
-      {/* <img src="https://i.imgur.com/YcAFh05.png" width="100%" height="430px"/> */}
       <h1 className="mainHeader">Spoofy</h1>
       <nav className="navBarItems">
          <h2>{navBarItems}</h2>

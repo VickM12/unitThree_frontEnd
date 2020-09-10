@@ -4,7 +4,6 @@ function LogInForm(props) {
   return (
     <div>
       <h2>Log In</h2>
-
       <form>
         <div>
           <label htmlFor="email">Email</label>
