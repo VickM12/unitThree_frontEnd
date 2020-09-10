@@ -7,6 +7,7 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
 import SpoofyCreate from "./components/SpoofyCreate/SpoofyCreate"
+import SpoofyShow from "./components/SpoofyShow/SpoofyShow"
 import "./App.css";
 import MusicInfo from './components/MusicInfo/MusicInfo';
 
@@ -181,7 +182,15 @@ const App = () => {
               return (
                  <SpoofyCreate isLoggedIn={isLoggedIn}
                  />
-                 
+                )
+              }}
+            />
+            <Route
+            path="/spoofyshow"
+            render={(props) => {
+              return (
+                 <SpoofyShow isLoggedIn={isLoggedIn}
+                 />
                 )
               }}
             />
