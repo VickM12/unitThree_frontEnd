@@ -1,0 +1,48 @@
+body{
+  background-color: peachpuff;
+}
+.navBarItems {
+  color: white; 
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  margin: 0px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mainHeader {
+  color: darkolivegreen;
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  padding: 30px;
+  margin: -20px; 
+}
+.music-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-submit {
+  justify-content: center;
+  align-items: center;
+}
+.Page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.artist-pic {
+  border-radius: 12%;
+}
