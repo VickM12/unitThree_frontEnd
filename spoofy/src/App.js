@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import LogInForm from "./components/LoginForm/LoginForm";
 import LogOut from "./components/LogOut/LogOut";
+import SpoofyCreate from "./components/SpoofyCreate/SpoofyCreate"
 import "./App.css";
 import MusicInfo from './components/MusicInfo/MusicInfo';
 
@@ -18,8 +19,6 @@ const App = () => {
     isLoggedIn: false,
   });
   
-
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [allMusic, setAllMusic] = useState({})
 
@@ -111,6 +110,9 @@ const App = () => {
     }
   };
 
+
+
+
   return (
     <div>
       <NavBar isLoggedIn={isLoggedIn} />
@@ -176,7 +178,17 @@ const App = () => {
           )}
         }
         />
+        <Route
+            path="/spoofycreate"
+            render={(props) => {
+              return (
+                 <SpoofyCreate isLoggedIn={isLoggedIn}
+                 />
+                )
+              }}
+            />
     </Router>
+    
       </div>
       
     </div>
