@@ -14,20 +14,20 @@ function NavBar(props) {
   ];
   if (props.isLoggedIn) {
     navBarItems.push(
-      <h2 key={2}>
+      <li key={2}>
         <a href="/logout">Log Out</a>
-      </h2>
+      </li>
     );
   } else {
     navBarItems.push(
-      <h2 key={3}>
+      <li key={3}>
         <a href="/signup">Sign Up</a>
-      </h2>
+      </li>
     );
     navBarItems.push(
-      <h2 key={4}>
+      <li key={4}>
         <a href="/users/login">Log In</a>
-      </h2>
+      </li>
     );
   }
 
