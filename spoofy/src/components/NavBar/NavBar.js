@@ -8,7 +8,7 @@ function NavBar(props) {
   let navBarItems = [
 
     <li key={1}>
-      <a href="/music">Music Search</a>
+      <a href="/music">Music</a>
     </li>,
   ];
   if (props.isLoggedIn) {
@@ -39,7 +39,6 @@ function NavBar(props) {
 
   return (
     <div>
-      {/* <img src="https://i.imgur.com/YcAFh05.png" width="100%" height="430px"/> */}
       <h1 className="mainHeader">Spoofy</h1>
       <nav className="navBarItems">
          <h2>{navBarItems}</h2>
