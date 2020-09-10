@@ -1,0 +1,56 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.navBarItems {
+  color: white; 
+  text-decoration: none;
+  background-color: black;
+  padding: 10px;
+  margin: 0px; 
+
+}
+.mainHeader {
+  color: darkolivegreen;
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+  padding: 30px;
+  margin: -20px; 
+}
+.music-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-submit {
+  justify-content: center;
+  align-items: center;
+}
+.Page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
