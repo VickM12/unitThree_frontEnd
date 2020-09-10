@@ -32,7 +32,6 @@ export default function MusicInfo(props) {
 				<a href={props.allMusic.data[11].preview}><button>Click Here to listen to {props.allMusic.data[11].title_short}</button></a>
 				<h3>Track Title: {props.allMusic.data[12].title_short}</h3>
 				<a href={props.allMusic.data[12].preview}><button>Click Here to listen to {props.allMusic.data[12].title_short}</button></a>
-				
 			</div>
 		</>
 	);

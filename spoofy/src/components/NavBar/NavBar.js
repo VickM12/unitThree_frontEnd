@@ -8,8 +8,12 @@ function NavBar(props) {
   let navBarItems = [
 
     <li key={1}>
+<<<<<<< HEAD
 
       <a href="/music">Music</a>
+=======
+      <a href="/music">Music Search</a>
+>>>>>>> 2da3879a430f75450f889a8f8c6fc9b89ab1b885
     </li>,
   ];
   if (props.isLoggedIn) {
@@ -18,14 +22,21 @@ function NavBar(props) {
         <a href="/logout">Log Out</a>
       </li>
     );
-  } else {
+  }if (props.isLoggedIn) {
     navBarItems.push(
       <li key={3}>
+        <a href="/spoofycreate">Add to Favorites</a>
+      </li>
+    );
+  }
+  else {
+    navBarItems.push(
+      <li key={4}>
         <a href="/signup">Sign Up</a>
       </li>
     );
     navBarItems.push(
-      <li key={4}>
+      <li key={5}>
         <a href="/users/login">Log In</a>
       </li>
     );
